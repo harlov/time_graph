@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="timegraph">
+<head>
+    <title ng-bind="title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="/temp/app.css" type="text/css" rel="stylesheet" data-concat="false">
+    <base href="/">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">TimeGraph</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ui-sref-active='active'><a ui-sref='mainGraph'>Main</a></li>
+            <li ui-sref-active='active'><a ui-sref='about'>About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" id="main-container">
+        <ui-view></ui-view>
+    </div><!-- /.container -->
+
+
+<!-- Livereload script for development only (stripped during dist build) -->
+<script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+<!-- bower:js -->
+<script src="../bower_components/jquery/jquery.js"></script>
+<script src="../bower_components/underscore/underscore.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-ui-utils/ui-utils.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/toastr/toastr.js"></script>
+<script src="../bower_components/d3/d3.js"></script>
+<script src="../bower_components/nvd3/build/nv.d3.js"></script>
+<script src="../bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+<!-- endbower -->
+
+<!-- Main App JS -->
+<script src="app.module.js"></script>
+<script src="blocks/exception/exception.module.js"></script>
+<script src="blocks/exception/exception-handler.provider.js"></script>
+<script src="blocks/exception/exception.js"></script>
+
+<script src="blocks/logger/logger.module.js"></script>
+<script src="blocks/logger/logger.js"></script>
+
+<script src="blocks/router/router.module.js"></script>
+<script src="blocks/router/router-helper.provider.js"></script>
+
+
+<script src="appCore/appCore.module.js"></script>
+<script src="appCore/config.js"></script>
+<script src="appCore/constants.js"></script>
+<script src="appCore/appCore.route.js"></script>
+<script src="directive/graphPlot/graphPlot.directive.js"></script>
+<script src="partial/mainGraph/mainGraph.controller.js"></script>
+<script src="partial/about/about.controller.js"></script>
+<script src="service/pointDataService.service.js"></script>
+<!-- Add New Component JS Above -->
+</body>
+</html>
